@@ -61,6 +61,5 @@ export async function GET(req: MedusaRequest, res: MedusaResponse) {
       },
     },
   })
-
   return res.status(200).json({ restaurants })
 }
