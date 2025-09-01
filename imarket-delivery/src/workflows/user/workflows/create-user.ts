@@ -21,8 +21,6 @@ export type CreateUserWorkflowInput = {
 export const createUserWorkflow = createWorkflow(
   "create-user-workflow",
   function (input: CreateUserWorkflowInput) {
-    //  Create User Flow -------------------------------
-    
 
     const restaurantUser = when(input, (input) => input.user.actor_type === "restaurant")
     .then(() => {
@@ -53,11 +51,6 @@ export const createUserWorkflow = createWorkflow(
     setAuthAppMetadataStep(authUserInput)
 
     return new WorkflowResponse(user?.id ?? "")
-
-
-
-
-    // --------------------
 
   }
 )
